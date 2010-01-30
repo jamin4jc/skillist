@@ -1,0 +1,143 @@
+body { background-color: #fff; color: #333; }
+
+body, p, ol, ul, td {
+  font-family: arial, helvetica, verdana, sans-serif;
+  font-size:   13px;
+  line-height: 18px;
+}
+
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+a { color: #000; }
+a:visited { color: #666; }
+a:hover { color: #fff; background-color:#000; }
+
+.fieldWithErrors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+#errorExplanation {
+  width: 400px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+#errorExplanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  background-color: #c00;
+  color: #fff;
+}
+
+#errorExplanation p {
+  color: #333;
+  margin-bottom: 0;
+  padding: 5px;
+}
+
+#errorExplanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+table.standard {
+  width: 100%;
+  border-spacing: 0;
+  border-right: 1px solid #595c6f;
+  border-bottom: 1px solid #7b7d86;
+  border-left: 1px solid #595c6f;
+}
+
+table.standard tr {
+  color: #5d5f70;
+  background: #f7f9ff;
+}
+
+table.standard tr.alt {
+  color: #5d5f70;
+  background: #eaefff;
+}
+
+table.standard tr td {
+  border-bottom: 1px solid #d8dbf3;
+  padding: 2px 4px;
+  font-size: 100%;
+}
+
+
+
+table.standard th {
+  background: #595c6f;
+  color: #e4e6f7;
+  font-weight: normal;
+  padding: 8px 4px 8px 12px;
+  text-align:left;
+  font-size: 130%;
+}
+
+table.standard td.main {
+  font-weight: bold;
+  padding-left: 15px;
+}
+
+div.skill_level_1 {
+  background: url('/images/novice.png') no-repeat;
+  width: 150px;
+  height: 32px;
+  float:left;
+  padding: 10px 4px 0 38px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+div.skill_level_2 {
+  background: url('/images/advanced_beginner.png') no-repeat;
+  width: 150px;
+  height: 32px;
+  float:left;
+  padding: 10px 4px 0 38px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+div.skill_level_3 {
+  background: url('/images/compotent.png') no-repeat;
+  width: 150px;
+  height: 32px;
+  float:left;
+  padding: 10px 4px 0 38px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+div.skill_level_4 {
+  background: url('/images/proficient.png') no-repeat;
+  width: 150px;
+  height: 32px;
+  float:left;
+  padding: 10px 4px 0 38px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+div.skill_level_5 {
+  background: url('/images/expert.png') no-repeat;
+  width: 150px;
+  height: 32px;
+  float:left;
+  padding: 10px 4px 0 38px;
+  font-weight: bold;
+  font-size: 14px;
+}
+

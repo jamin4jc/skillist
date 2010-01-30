@@ -1,0 +1,23 @@
+<table class="standard">
+  <tr>
+    <th>Skill</th>
+    <th>Level</th>
+    <th>User</th>
+    <th>Actions</th>
+  </tr>
+
+<% @skills.each do |skill| %>
+  <tr class="<%=cycle('','alt')%>">
+    <td class="main"><%=link_to skill.name, skill %></td>
+    <td><div class="skill_level_<%= skill.level %>"><%=h skill.level_label %></dev></td>
+    <td><%= link_to skill.user.name, skill.user %></td>
+    <td>
+        <%= link_to 'edit', edit_skill_path(skill) %> | 
+        <%= link_to 'delete', skill, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= button_to 'Acquire New skill', new_skill_path %>

@@ -1,0 +1,17 @@
+<h1>Skill: <%=h @skill.name %></h1>
+
+<p>
+  <b>Level:</b>
+  <%=h @skill.level_label %>
+  <br />
+  <%=h @skill.level_definition %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%=h @skill.user.name %>
+</p>
+
+
+<%= link_to 'Edit', edit_skill_path(@skill) %> |
+<%= link_to 'Back', skills_path %>

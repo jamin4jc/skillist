@@ -1,0 +1,12 @@
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :level %><br />
+    <%= f.select :level, Skill::level_selections %>
+    </p>
+    <%=  @skill.level %>
+  <p>
+    <%= f.submit button_text %>
+  </p>
