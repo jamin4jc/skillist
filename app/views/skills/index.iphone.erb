@@ -1,0 +1,13 @@
+<ul title="Skills" selected="true">
+
+  <% first_letter = nil %>
+  <% @skills.each do |skill| %>
+
+    <% if first_letter != skill.name.first %>
+      <% first_letter = skill.name.first %>
+      <li class="group"><%= first_letter %></li>
+    <% end %>
+
+  <li><%= link_to skill.name, skill %></li>
+<% end %>
+</table>

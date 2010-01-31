@@ -1,0 +1,13 @@
+<% form_for(@skill,
+                      :html     => {:class => 'panel',
+                      :selected => 'true',
+                      :title    => 'New Skill'}) do |f| -%>
+  <fieldset>
+    <%= f.error_messages %>                       
+    <div class="row">
+      <label for="Skill">Skill</label>
+      <%= f.text_field :name %>
+    </div>
+  </fieldset>
+  <a class="whiteButton" type="submit" href="#">Add</a>
+<% end %>
