@@ -4,9 +4,8 @@
   </p>
   <p>
     <%= f.label :level %><br />
-    <%= f.select :level, Skill::level_selections %>
-    </p>
-    <%=  @skill.level %>
+    <%= f.collection_select :level, SkillLevel.all, :id, :selection_name %>
+  </p>
   <p>
     <%= f.submit button_text %>
   </p>
