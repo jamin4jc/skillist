@@ -14,10 +14,9 @@ class SkillLevel
   
   attr_accessor :id, :name, :description
 
-  def initialize(id, name, description)
+  def initialize(id, name)
     @id = id
     @name = name
-    @description = description
   end
 
   def selection_name
@@ -27,8 +26,10 @@ class SkillLevel
   def self.all
     return @all if @all
     @all = []
-    LEVEL_DEFINITIONS.each do |k,v|
-      @all << SkillLevel.new(k,v[0],v[1])
+    (1..5).each do |i|
+      id          = i
+      name        = LEVEL_DEFINITIONS[i][0]
+      @all << SkillLevel.new(id, name)
     end
     @all
   end
