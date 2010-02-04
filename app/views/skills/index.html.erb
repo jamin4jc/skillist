@@ -3,6 +3,7 @@
     <th>Skill</th>
     <th>Level</th>
     <th>User</th>
+    <th>Added on</th>
     <th>Actions</th>
   </tr>
 
@@ -11,6 +12,7 @@
     <td class="main"><%=link_to skill.name, skill %></td>
     <td><div class="skill_level_<%= skill.level %>"><%=h skill.level_label %></dev></td>
     <td><%= link_to skill.user.name, skill.user %></td>
+    <td><%= skill.created_at.to_s(:long) %></td>
     <td>
         <%= link_to 'edit', edit_skill_path(skill) %> | 
         <%= link_to 'delete', skill, :confirm => 'Are you sure?', :method => :delete %></td>

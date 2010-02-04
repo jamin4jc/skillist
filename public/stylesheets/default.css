@@ -91,6 +91,15 @@ table.standard td.main {
   padding-left: 15px;
 }
 
+div.skill_level_0 {
+  width: 150px;
+  height: 32px;
+  float:left;
+  padding: 10px 4px 0 38px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
 div.skill_level_1 {
   background: url('/images/novice.png') no-repeat;
   width: 150px;

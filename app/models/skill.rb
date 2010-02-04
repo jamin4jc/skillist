@@ -25,12 +25,12 @@ class Skill < ActiveRecord::Base
   
   def level_label
     definition = LEVEL_DEFINITIONS[level]
-    definition ? definition[0] : "n/a"
+    definition ? definition[0] : "none"
   end
 
   def level_definition
     definition = LEVEL_DEFINITIONS[level]
-    definition ? definition[1] : "n/a"
+    definition ? definition[1] : "none"
   end
 
   def to_s
