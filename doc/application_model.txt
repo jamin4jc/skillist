@@ -1,0 +1,8 @@
+Application Model
+
+User  -< Skill
+
+Skill -< Resources
+      -- Next Step
+      -< Blocker
+
