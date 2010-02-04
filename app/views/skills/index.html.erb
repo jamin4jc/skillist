@@ -11,7 +11,7 @@
   <tr class="<%=cycle('','alt')%>">
     <td class="main"><%=link_to skill.name, skill %></td>
     <td><div class="skill_level_<%= skill.level %>"><%=h skill.level_label %></dev></td>
-    <td><%= link_to skill.user.name, skill.user %></td>
+      <td><%= link_to skill.user.email, skill.user %></td>
     <td><%= skill.created_at.to_s(:long) %></td>
     <td>
         <%= link_to 'edit', edit_skill_path(skill) %> | 
