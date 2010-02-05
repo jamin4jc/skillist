@@ -2,6 +2,9 @@ ActionController::Routing::Routes.draw do |map|
   Clearance::Routes.draw(map)
   map.resources :users
   map.resources :skills
+  map.resources :profiles
+
+  map.craftsman 'craftsman/:username', :controller => :skills, :action => :index
 
   # The priority is based upon order of creation: first created -> highest priority.
 

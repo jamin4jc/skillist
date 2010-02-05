@@ -1,10 +1,16 @@
 class SkillsController < ApplicationController
   before_filter :authenticate
+# before_filter :get_user_context
+
+# def get_user_context
+#   @current_username = current_user.profile.username
+# end
+
   
   # GET /skills
   # GET /skills.xml
   def index
-    @skills = Skill.all(:order => 'name')
+    @skills = Skill.all(:order => 'name', :conditions => {:user_id => current_user.id})
 
     respond_to do |format|
       format.html # index.html.erb
@@ -50,7 +56,7 @@ class SkillsController < ApplicationController
   # POST /skills
   # POST /skills.xml
   def create
-    @skill = Skill.new(params[:skill].merge(:user_id => 1))
+    @skill = Skill.new(params[:skill].merge(:user_id => current_user.id))
 
     respond_to do |format|
       if @skill.save
@@ -75,7 +81,7 @@ class SkillsController < ApplicationController
       if @skill.update_attributes(params[:skill])
         flash[:notice] = 'Skill was successfully updated.'
         format.html { redirect_to(skills_path) }
-        format.iphone { redirect_to(skills_path) }
+        format.iphone { redirect_to(skills_path, :layout => false ) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
