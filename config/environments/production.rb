@@ -29,4 +29,5 @@ config.action_view.cache_template_loading            = true
 #
 
 config.action_mailer.default_url_options = { :host => 'skillist.heroku.com' }
+config.action_mailer.delivery_method = :test
 
