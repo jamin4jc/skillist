@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
 
   after_create :create_new_profile
 
-  def create_profile
+  def create_new_profile
     self.profile = Profile.new
   end
 end
