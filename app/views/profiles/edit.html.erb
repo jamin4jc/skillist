@@ -1,0 +1,13 @@
+  <% semantic_form_for @profile do |form| %>
+
+    <% form.inputs :name => "User Profile" do %>
+      <%= form.input :name %>
+      <%= form.input :username %>
+      <%= form.input :location, :hint => "Example: 'Columbus, OH'"  %>
+    <% end %>
+
+    <% form.buttons do %>
+      <%= form.commit_button %>
+    <% end %>
+
+  <% end %>

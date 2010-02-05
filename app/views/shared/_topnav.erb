@@ -1,0 +1,7 @@
+<% if current_user %>
+  Signed in as <%= current_user.email %><br />
+
+  <%= link_to 'skills', skills_path %>
+  <%= link_to 'edit profile', edit_profile_url(current_user.profile) %>
+  <%= link_to 'logout', sign_out_path %>
+<% end %>
