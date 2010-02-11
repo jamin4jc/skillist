@@ -3,6 +3,7 @@ Application Model
 User  -< Skill
 
 Skill -< Resources
-      -- Next Step
+      -< Step (Next Step)
       -< Blocker
+      -< Activity Log
 

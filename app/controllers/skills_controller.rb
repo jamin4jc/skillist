@@ -23,6 +23,7 @@ class SkillsController < ApplicationController
   # GET /skills/1.xml
   def show
     @skill = Skill.find(params[:id])
+    @activity_log = ActivityLog.new(:skill_id => @skill.id)
 
     respond_to do |format|
       format.html # show.html.erb

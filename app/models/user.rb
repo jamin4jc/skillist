@@ -8,5 +8,6 @@ class User < ActiveRecord::Base
 
   def create_new_profile
     self.profile = Profile.new
+    save
   end
 end

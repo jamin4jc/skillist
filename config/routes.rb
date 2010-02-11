@@ -3,6 +3,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :users
   map.resources :skills
   map.resources :profiles
+  map.resources :activity_log, :only => [:create] 
 
   map.craftsman 'craftsman/:username', :controller => :skills, :action => :index
 

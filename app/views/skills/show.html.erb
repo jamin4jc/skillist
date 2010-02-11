@@ -12,6 +12,22 @@
   <%=h @skill.user.profile.name %>
 </p>
 
+<h3>Activity Log</h3>
+<% semantic_form_for @activity_log, :url => {:controller => :activity_logs, :action => :create } do |form| %>
+  <% form.inputs do -%>
+    <%= form.input :entry, :input_html => {:style => 'width: 400px; height: 80px'} %>
+    <%= form.input :skill_id, :as => :hidden %>
+    <%= form.commit_button "Save" %>
+  <% end -%>
+<% end -%>
+
+<ul>
+  <% @skill.activity_logs.each do |activity_log| -%>
+    <li><%= activity_log.entry %> - <%= time_ago_in_words(activity_log.created_at) %> ago </li>
+  <% end -%>
+</ul>
+ 
+
 
 <%= link_to 'Edit', edit_skill_path(@skill) %> |
 <%= link_to 'Back', skills_path %>
