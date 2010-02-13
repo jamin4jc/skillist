@@ -18,6 +18,10 @@ class Skill < ActiveRecord::Base
             "The expert performer no longer relies on an analytic principle (rule, guideline, maxim) to connect her or his understanding of the situation to an appropriate action. The expert nurse, with an enormous background of experience, now has an intuitive grasp of each situation and zeroes in on the accurate region of the problem without wasteful consideration of a large range of unfruitful, alternative diagnoses and solutions. The expert operates from a deep understanding of the total situation. The chess master, for instance, when asked why he or she made a particularly masterful move, will just say: 'Because it felt right; it looked good.' The performer is no longer aware of features and rules;' his/her performance becomes fluid and flexible and highly proficient. This is not to say that the expert never uses analytic tools. Highly skilled analytic ability is necessary for those situations with which the nurse has had no previous experience. Analytic tools are also necessary for those times when the expert gets a wrong grasp of the situation and then finds that events and behaviors are not occurring as expected When alternative perspectives are not available to the clinician, the only way out of a wrong grasp of the problem is by using analytic problem solving."]
     }
   
+  def last_activity_log
+    activity_logs.last
+  end
+ 
   def self.level_selections
     (1..5).map do |i|
       ["#{i} - #{LEVEL_DEFINITIONS[i][0]}", [i]]

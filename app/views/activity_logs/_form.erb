@@ -1,0 +1,8 @@
+<h3>Log New Activity</h3>
+<% semantic_form_for @activity_log, :url => {:controller => :activity_logs, :action => :create } do |form| %>
+  <% form.inputs do -%>
+    <%= form.input :entry, :input_html => {:style => 'width: 400px; height: 3em'} %>
+    <%= form.input :skill_id, :as => :hidden %>
+    <%= form.commit_button "Update" %>
+  <% end -%>
+<% end -%>

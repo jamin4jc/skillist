@@ -3,7 +3,6 @@
 
 class ApplicationController < ActionController::Base
   include Clearance::Authentication
-  acts_as_iphone_controller
   layout 'default'
 
   helper :all # include all helpers, all the time

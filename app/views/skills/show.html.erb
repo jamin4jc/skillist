@@ -3,27 +3,14 @@
 <p>
   <b>Level:</b>
   <%=h @skill.level_label %>
-  <br />
-  <%=h @skill.level_definition %>
 </p>
 
-<p>
-  <b>User:</b>
-  <%=h @skill.user.profile.name %>
-</p>
+<%= render :partial => 'activity_logs/form' %>
 
 <h3>Activity Log</h3>
-<% semantic_form_for @activity_log, :url => {:controller => :activity_logs, :action => :create } do |form| %>
-  <% form.inputs do -%>
-    <%= form.input :entry, :input_html => {:style => 'width: 400px; height: 80px'} %>
-    <%= form.input :skill_id, :as => :hidden %>
-    <%= form.commit_button "Save" %>
-  <% end -%>
-<% end -%>
-
-<ul>
-  <% @skill.activity_logs.each do |activity_log| -%>
-    <li><%= activity_log.entry %> - <%= time_ago_in_words(activity_log.created_at) %> ago </li>
+<ul class="activity_log">
+  <% @skill.activity_logs.reverse_each do |activity_log| -%>
+    <li<%= cycle(' class="alt"','')%>><%= activity_log.entry %> - <%= time_ago_in_words(activity_log.created_at) %> ago </li>
   <% end -%>
 </ul>
  

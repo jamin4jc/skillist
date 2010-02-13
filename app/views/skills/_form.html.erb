@@ -1,11 +1,12 @@
-  <p>
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </p>
-  <p>
+  <div style="display:inline; float:left">
+    <%= f.label :name, 'Skill' %><br />
+    <%= f.text_field :name, :size => 60 %>
+  </div>
+  <div style="display:inline; float:left">
     <%= f.label :level %><br />
     <%= f.collection_select :level, SkillLevel.all, :id, :selection_name %>
-  </p>
-  <p>
+  </div>
+  <div>
+    <%= f.label :button, "&nbsp;" %><br />
     <%= f.submit button_text %>
-  </p>
+  </div>

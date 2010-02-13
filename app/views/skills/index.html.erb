@@ -1,18 +1,22 @@
+<div style="padding: 0 0 25px 25px">
+  <%= render :partial => 'new' %>
+</div>
+
 <table class="standard">
   <tr>
     <th>Skill</th>
     <th>Level</th>
-    <th>User</th>
     <th>Added on</th>
     <th>Actions</th>
   </tr>
 
 <% @skills.each do |skill| %>
   <tr class="<%=cycle('','alt')%>">
-    <td class="main"><%=link_to skill.name, skill %></td>
+    <td class="first"><strong><%=link_to skill.name, skill %></strong><br />
+      <%= "#{skill.last_activity_log.entry} - #{time_ago_in_words(skill.last_activity_log.created_at)} ago" if skill.last_activity_log %> 
+    </td>
     <td><div class="skill_level_<%= skill.level %>"><%=h skill.level_label %></dev></td>
-      <td><%= link_to skill.user.profile.name, skill.user.profile %></td>
-    <td><%= skill.created_at.to_s(:long) %></td>
+    <td><%= time_ago_in_words(skill.created_at) %> ago</td>
     <td>
         <%= link_to 'edit', edit_skill_path(skill) %> | 
         <%= link_to 'delete', skill, :confirm => 'Are you sure?', :method => :delete %></td>
@@ -22,4 +26,4 @@
 
 <br />
 
-<%= button_to 'Acquire New skill', new_skill_path %>
+

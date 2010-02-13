@@ -10,12 +10,13 @@ class SkillsController < ApplicationController
   # GET /skills
   # GET /skills.xml
   def index
-    @skills = Skill.all(:order => 'name', :conditions => {:user_id => current_user.id})
+    @skills       = Skill.all(:order => 'lower(name)', :conditions => {:user_id => current_user.id})
+    @activity_log = ActivityLog.new
+    @skill        = Skill.new
 
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @skills }
-      format.iphone { render :layout => 'iphone' } #.html.erb' } 
     end
   end
 
@@ -28,7 +29,6 @@ class SkillsController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @skill }
-      format.iphone { render :layout => false }
     end
   end
 
@@ -40,7 +40,6 @@ class SkillsController < ApplicationController
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @skill }
-      format.iphone { render :layout => false }
     end
   end
 
@@ -50,7 +49,6 @@ class SkillsController < ApplicationController
 
     respond_to do |format|
       format.html # edit.html.erb
-      format.iphone { render :layout => false }
     end
   end
 
@@ -63,11 +61,9 @@ class SkillsController < ApplicationController
       if @skill.save
         flash[:notice] = 'Skill was successfully created.'
         format.html { redirect_to(skills_path) }
-        format.iphone { redirect_to(skills_path) }
         format.xml  { render :xml => @skill, :status => :created, :location => @skill }
       else
         format.html { render :action => "new" }
-        format.iphone { render :action => "new" }
         format.xml  { render :xml => @skill.errors, :status => :unprocessable_entity }
       end
     end
@@ -82,11 +78,9 @@ class SkillsController < ApplicationController
       if @skill.update_attributes(params[:skill])
         flash[:notice] = 'Skill was successfully updated.'
         format.html { redirect_to(skills_path) }
-        format.iphone { redirect_to(skills_path, :layout => false ) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
-        format.iphone { render :action => "edit", :layout => false }
         format.xml  { render :xml => @skill.errors, :status => :unprocessable_entity }
       end
     end
@@ -101,7 +95,6 @@ class SkillsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to(skills_url) }
       format.xml  { head :ok }
-      format.iphone { redirect_to(skills_url) }
     end
   end
 end

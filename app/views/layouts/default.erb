@@ -9,9 +9,11 @@
 
 </head>
 <body>
-  <img src="/images/skillist.png" />
+  <div id="header">
+    <%= link_to "<span>Skillist</span>", skills_path, :id => 'logo' %>
+    <%= render :partial => 'shared/topnav' %>
+  </div>
 <p style="color: green"><%= flash[:notice] %></p>
-<%= render :partial => 'shared/topnav' %>
 <%= yield %>
 
 </body>
