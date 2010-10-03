@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe ActivityLogsController do
-
+  
   context "create" do
     it "creates the activity log" do
       activity_log = Factory.build(:activity_log)

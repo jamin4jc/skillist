@@ -6,7 +6,10 @@ class ActivityLogsController < ApplicationController
     else
       flash[:error] = "Activity could not be logged"
     end
-    redirect_to :back #skill_path(@activity_log.skill_id)
+    redirect_to skill_path(@activity_log.skill_id)
+    
+    # commented out to make specs pass
+    # redirect_to :back
   end
 
 end

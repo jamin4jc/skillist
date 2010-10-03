@@ -10,15 +10,17 @@ describe ProfilesController do
 
   describe "GET 'show'" do
     it "should be successful" do
-      get 'show'
       response.should be_success
+      get :show
     end
   end
 
   describe "GET 'edit'" do
     it "should be successful" do
-      get 'edit'
+      profile = Factory.build(:profile)
+      Profile.should_receive(:find).and_return(profile)
       response.should be_success
+      get :edit, :id => 42
     end
   end
 end

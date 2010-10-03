@@ -20,3 +20,7 @@ end
 Factory.define :skill do |skill|
   skill.name { "Fishin" }
 end
+
+Factory.define :profile do |profile|
+  profile.name { "Ben" }
+end
