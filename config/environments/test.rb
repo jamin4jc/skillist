@@ -32,3 +32,5 @@ config.gem 'rspec',            :lib => false
 config.gem 'rspec-rails',      :lib => false
 config.gem 'remarkable_rails'
 config.gem 'factory_girl'
+
+config.gem 'nokogiri'
