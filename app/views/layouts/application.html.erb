@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Skillist</title>
+  <%= stylesheet_link_tag :all %>
+  <%= javascript_include_tag :defaults %>
+  <%= csrf_meta_tag %>
+</head>
+<body>
+  <div id="header">
+    <%= link_to "<span>Skillist</span>".html_safe, skills_path, :id => 'logo' %>
+    <%= render :partial => 'shared/topnav' %>
+  </div>
+<p style="color: green"><%= flash[:notice] %></p>
+<%= yield %>
+
+</body>
+</html>

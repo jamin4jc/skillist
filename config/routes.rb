@@ -1,14 +1,14 @@
-ActionController::Routing::Routes.draw do |map|
-  Clearance::Routes.draw(map)
-  map.resources :users
-  map.resources :skills
-  map.resources :profiles
-  map.resources :activity_log, :only => [:create] 
+Skillist::Application.routes.draw do
+  #Clearance::Routes.draw(map)
+  resources :users
+  resources :skills
+  resources :profiles
+  resources :activity_log #, :only => [:create] 
 
-  map.craftsman 'craftsman/:username', :controller => :skills, :action => :index
-  
-  map.root :controller => "skills"
+  match 'craftsman/:username' => 'skills#index', :as => :craftsman
 
-  map.connect ':controller/:action/:id'
-  map.connect ':controller/:action/:id.:format'
+  match '/' => '/skills#index'
+
+  match '/:controller(/:action(/:id))'
 end
+

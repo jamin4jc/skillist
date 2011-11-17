@@ -7,6 +7,6 @@
     <%= f.collection_select :level, SkillLevel.all, :id, :selection_name %>
   </div>
   <div>
-    <%= f.label :button, "&nbsp;" %><br />
+    <%= f.label :button, "&nbsp;".html_safe %><br />
     <%= f.submit button_text %>
   </div>

@@ -1,7 +1,5 @@
 <div style="padding: 0 0 25px 25px">
-  <%= render :partial => 'new' %>
 </div>
-
 <table class="standard">
   <tr>
     <th>Skill</th>
@@ -9,10 +7,10 @@
     <th>Added on</th>
     <th>Actions</th>
   </tr>
-
 <% @skills.each do |skill| %>
   <tr class="<%=cycle('','alt')%>">
-    <td class="first"><strong><%=link_to skill.name, skill %></strong><br />
+    <td class="first">
+      <strong><%= link_to skill.name, skill %></strong><br />
       <%= "#{skill.last_activity_log.entry} - #{time_ago_in_words(skill.last_activity_log.created_at)} ago" if skill.last_activity_log %> 
     </td>
     <td><div class="skill_level_<%= skill.level %>"><%=h skill.level_label %></dev></td>

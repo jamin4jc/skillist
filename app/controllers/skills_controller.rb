@@ -1,11 +1,14 @@
 class SkillsController < ApplicationController
-  before_filter :authenticate
-# before_filter :get_user_context
+  before_filter :get_user_context
+  before_filter :authorize
 
-# def get_user_context
-#   @current_username = current_user.profile.username
-# end
+  def get_user_context
+    @current_username = current_user.profile.username
+  end
 
+  def current_user
+    User.first
+  end
   
   # GET /skills
   # GET /skills.xml
