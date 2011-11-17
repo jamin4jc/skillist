@@ -10,8 +10,6 @@ Scenario:
     | ruby    | 4 |
     | bundler | 1 |
   When I am on the skills page
-  Then I should see my skills:
-    | rvm     |
-    | ruby    |
-    | bundler |
-  
+  Then I should see "rvm" within "table"
+  And I should see "ruby" within "table"
+  And I should see "bundler" within "table"

@@ -27,10 +27,11 @@ gem 'formtastic'
 group :development, :test do
   gem 'ruby-debug'
   gem 'rspec-rails'
-  gem 'cucumber-rails'
+  gem 'cucumber-rails', ">= 0.5.1"
+  gem 'database_cleaner'
   gem 'capybara'
-  gem 'webrat'
   gem 'factory_girl_rails'
+  gem 'launchy'
  # gem 'remarkable_rails'
 end
 

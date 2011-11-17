@@ -7,10 +7,3 @@ Given /^I have the skills:$/ do |fields|
     @user.skills.create(:name => skill, :level => level)
   end
 end
-
-Then /^I should see my skills:$/ do
-  fields.rows_hash.each do |skill|
-    Then %{I should see "#{skill}"}
-  end
-end
-
