@@ -31,6 +31,6 @@ group :development, :test do
   gem 'capybara'
   gem 'webrat'
   gem 'factory_girl_rails'
-  #gem 'remarkable_rails'
+ # gem 'remarkable_rails'
 end
 
